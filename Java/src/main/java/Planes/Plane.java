@@ -1,9 +1,9 @@
-package Planes;
+package planes;		//packages names should be in the same style
 
 import java.util.Objects;
 
 abstract public class Plane {
-    String model;
+    private String model;		//private variable
     private int maxSpeed;
     private int maxFlightDistance;
     private int maxLoadCapacity;
@@ -19,17 +19,17 @@ abstract public class Plane {
         return model;
     }
 
-    public int getMS() {
+    public int getMaxSpeed() {	//not clear MS
         return maxSpeed;
     }
 
-    public int Get_Max_Flight_Distance() {
+    public int getMaxFlightDistance() {		//without _ 
         return maxFlightDistance;
     }
 
     public int getMinLoadCapacity() {
-        int result = this.maxLoadCapacity;
-        return result;
+		return maxLoadCapacity;				//excess code
+        
     }
 
     @Override
@@ -43,10 +43,10 @@ abstract public class Plane {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
+    public boolean equals(Object object) {	//o not informative object's name
+        if (this == object) return true;
         if (!(o instanceof Plane)) return false;
-        Plane plane = (Plane) o;
+        Plane plane = (Plane) object;		//o
         return maxSpeed == plane.maxSpeed &&
                 maxFlightDistance == plane.maxFlightDistance &&
                 maxLoadCapacity == plane.maxLoadCapacity &&
